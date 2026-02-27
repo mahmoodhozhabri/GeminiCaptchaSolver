@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="optionsTitle">Gemini Captcha Solver Settings</title>
+  <style>
+    body { font-family: sans-serif; padding: 15px; width: 420px; background-color: #f4f4f9; }
+    .container { display: flex; flex-direction: column; gap: 15px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .form-group { display: flex; flex-direction: column; }
+    label { margin-bottom: 5px; font-weight: bold; font-size: 14px; }
+    input[type='text'], select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; }
+    .row { display: flex; gap: 10px; align-items: flex-end; }
+    button { padding: 10px 15px; background-color: #4285F4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    button:hover { background-color: #357ae8; }
+    button#fetch-models { background-color: #34a853; font-size: 12px; }
+    #status { margin-top: 10px; color: #d93025; font-size: 13px; font-weight: bold; }
+    .success { color: green !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="margin-top:0" data-i18n="settingsHeader">Settings</h2>
+    
+    <div class="form-group">
+      <label for="api-key" data-i18n="apiKeyLabel">Gemini API Key:</label>
+      <div class="row">
+        <input id="api-key" type="text" data-i18n-placeholder="apiKeyPlaceholder">
+        <button id="fetch-models" data-i18n="fetchModelsBtn">Fetch Models</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="model" data-i18n="selectModelLabel">Select Model:</label>
+      <select id="model">
+        <option value="" data-i18n="defaultModelOption">-- First fetch models --</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="proxy-url" data-i18n="proxyLabel">Proxy URL (Optional):</label>
+      <input id="proxy-url" type="text" data-i18n-placeholder="proxyPlaceholder">
+    </div>
+
+    <button id="save" data-i18n="saveBtn">Save Settings</button>
+    <div id="status"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
